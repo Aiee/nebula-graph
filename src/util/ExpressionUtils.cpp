@@ -345,7 +345,8 @@ Expression *ExpressionUtils::rewriteRelExprHelper(ObjectPool *pool,
     return rewriteRelExprHelper(pool, root, relRightOperandExpr);
 }
 
-StatusOr<Expression*> ExpressionUtils::filterTransform(const Expression *filter, ObjectPool *pool) {
+StatusOr<Expression *> ExpressionUtils::filterTransform(const Expression *filter,
+                                                        ObjectPool *pool) {
     auto rewrittenExpr = const_cast<Expression *>(filter);
     // Rewrite relational expression
     rewrittenExpr = rewriteRelExpr(rewrittenExpr, pool);
